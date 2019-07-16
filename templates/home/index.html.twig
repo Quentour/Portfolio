@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HomeController!{% endblock %}
+
+{% block stylesheets %}
+        {{ encore_entry_link_tags('home') }}
+{% endblock %}
+
+{% block body %}
+<div class="container-fluid p-0">
+
+    <div class="head">
+        <h2 class="page-title">Quentin LATOUR</h2>
+        <h2 class="page-title mb-0" style="text-align: right;">Web Developer</h2>
+    </div>
+
+    <div class="row m-0 p-0">
+        <img class="col-6 m-0 p-0" src="{{ user.picture }}">
+        <p class="col-6 desc-card m-0 p-0">{{ user.description }}</p>
+    </div>
+
+    <div class="col-3 info-card">
+        <p>Phone: {{ user.phone }}</p>
+        <p>Mail: {{ user.mail }}</p>
+        <p>Address: {{ user.address }}</p>
+    </div>
+    <a>
+</div>
+
+<style>
+
+
+</style>
+{% endblock %}
+
+{% block javascript %}
+    {{ encore_entry_script_tags('app') }}
+{% endblock %}

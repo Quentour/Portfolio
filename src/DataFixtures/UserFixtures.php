@@ -5,6 +5,7 @@ namespace App\DataFixtures;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
+use App\Entity\User;
 
 class UserFixtures extends Fixture
 {
@@ -20,9 +21,14 @@ class UserFixtures extends Fixture
     {
     
         $user = new User();
-        $user->setUsername("nalodd");
-        $user->setRoles["ROLE_ADMIN"];
-        $user->setPassword($this->passwordEncoder->encodePassword($user, 'pswd'));
+        $user->setUsername("nalodd")
+            ->setRoles(["ROLE_ADMIN"])
+            ->setPassword($this->passwordEncoder->encodePassword($user, 'pswd'))
+            ->setDescription("description")
+            ->setPhone("0928408409")
+            ->setMail("jean@nemar.com")
+            ->setAddress("shfmkhdsùf");
+        $manager->persist($user);
 
         $manager->flush();
     }

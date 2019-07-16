@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("admin/skill")
+ * @Route("/skill")
  */
 class SkillController extends AbstractController
 {
@@ -20,7 +20,7 @@ class SkillController extends AbstractController
      */
     public function index(SkillRepository $skillRepository): Response
     {
-        return $this->render('admin/skill/index.html.twig', [
+        return $this->render('skill/index.html.twig', [
             'skills' => $skillRepository->findAll(),
         ]);
     }
@@ -42,7 +42,7 @@ class SkillController extends AbstractController
             return $this->redirectToRoute('skill_index');
         }
 
-        return $this->render('admin/skill/new.html.twig', [
+        return $this->render('skill/new.html.twig', [
             'skill' => $skill,
             'form' => $form->createView(),
         ]);
@@ -53,7 +53,7 @@ class SkillController extends AbstractController
      */
     public function show(Skill $skill): Response
     {
-        return $this->render('admin/skill/show.html.twig', [
+        return $this->render('skill/show.html.twig', [
             'skill' => $skill,
         ]);
     }
@@ -72,7 +72,7 @@ class SkillController extends AbstractController
             return $this->redirectToRoute('skill_index');
         }
 
-        return $this->render('admin/skill/edit.html.twig', [
+        return $this->render('skill/edit.html.twig', [
             'skill' => $skill,
             'form' => $form->createView(),
         ]);

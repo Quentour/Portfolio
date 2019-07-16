@@ -58,6 +58,16 @@ class User implements UserInterface
      */
     private $picture;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Projects", inversedBy="users")
+     */
+    private $Projects;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Skill", inversedBy="users")
+     */
+    private $Skills;
+
 
     public function getId(): ?int
     {
@@ -190,5 +200,29 @@ class User implements UserInterface
     {
         // If you store any temporary, sensitive data on the user, clear it here
         // $this->plainPassword = null;
+    }
+
+    public function getProjects(): ?Projects
+    {
+        return $this->Projects;
+    }
+
+    public function setProjects(?Projects $Projects): self
+    {
+        $this->Projects = $Projects;
+
+        return $this;
+    }
+
+    public function getSkills(): ?Skill
+    {
+        return $this->Skills;
+    }
+
+    public function setSkills(?Skill $Skills): self
+    {
+        $this->Skills = $Skills;
+
+        return $this;
     }
 }

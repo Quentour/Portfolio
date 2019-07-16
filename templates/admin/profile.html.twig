@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<h1>Your profile</h1>
+<h3>{{ user.username }}</h3>
+<p>Description: {{ user.description }} </p>
+<p>{{ user.picture }}</p>
+<p>phone: {{ user.phone}} </p>
+<p>mail: {{ user.mail }}</p>
+<p>address: {{ user.address }}</p>
+<p>{{ user.skills }}</p>
+{% for project in user.projects %}
+<p>{{ user.projects }}</p>
+{% endfor %}
+<a href="{{ path('admin_edit', {'id': user.id}) }}">edit</a>
+{% endblock %}

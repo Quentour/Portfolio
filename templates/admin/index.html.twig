@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+<h1>Bienvenu sur page d'administration</h1>
+<a href="{{ path('admin_profile') }}">Profile</a>
+<a href="{{ path('projects_index') }}">Projects</a>
+<a href="{{ path('skill_index') }}">Skills</a>
+
+{% endblock %}
+

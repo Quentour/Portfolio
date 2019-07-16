@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("admin/projects")
+ * @Route("/projects")
  */
 class ProjectsController extends AbstractController
 {
@@ -20,7 +20,7 @@ class ProjectsController extends AbstractController
      */
     public function index(ProjectsRepository $projectsRepository): Response
     {
-        return $this->render('admin/projects/index.html.twig', [
+        return $this->render('projects/index.html.twig', [
             'projects' => $projectsRepository->findAll(),
         ]);
     }
@@ -42,7 +42,7 @@ class ProjectsController extends AbstractController
             return $this->redirectToRoute('projects_index');
         }
 
-        return $this->render('admin/projects/new.html.twig', [
+        return $this->render('projects/new.html.twig', [
             'project' => $project,
             'form' => $form->createView(),
         ]);
@@ -53,7 +53,7 @@ class ProjectsController extends AbstractController
      */
     public function show(Projects $project): Response
     {
-        return $this->render('admin/projects/show.html.twig', [
+        return $this->render('projects/show.html.twig', [
             'project' => $project,
         ]);
     }
@@ -72,7 +72,7 @@ class ProjectsController extends AbstractController
             return $this->redirectToRoute('projects_index');
         }
 
-        return $this->render('admin/projects/edit.html.twig', [
+        return $this->render('projects/edit.html.twig', [
             'project' => $project,
             'form' => $form->createView(),
         ]);
