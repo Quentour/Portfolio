@@ -6,25 +6,40 @@
 
 .info-card
 {
-    background-color: #094644;
+    background-color: #073433;
     color: white;
 }
 
 .desc-card
 {
-    background-image: linear-gradient(#094644, #17BEBB);
+    position:absolute;
+    left:50%;
+    background-image: linear-gradient(#073433, #17BEBB);
     color: white;
     font-size: 2em;
     text-align: center;
+    opacity: 1;
     transition: 1s;
+    height: 100%;
 }
 
-.desc-card:hover
+.desc-card-hidden
 {
-    background-image: linear-gradient(#17BEBB, #094644);
-    color: #094644;
-    
+    position: absolute;
+    left: 50%;
+    background-image: linear-gradient(#17BEBB, #073433);
+    color: white;
+    font-size: 2em;
+    text-align: center;
+    z-index: -1;
+    height: 100%;
 }
+
+.desc-card:hover 
+{
+    opacity: 0;
+}
+
 
 .page-title
 {

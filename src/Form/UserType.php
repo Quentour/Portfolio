@@ -21,9 +21,19 @@ class UserType extends AbstractType
             ->add('mail')
             ->add('address')
             ->add('picture')
-            ->add('Projects', EntityType::Class, ['class' => Projects::Class, 'choice_label' => 'name',])
-            ->add('Skills', EntityType::Class, ['class' => Skill::Class, 'choice_label' => 'name',])
-        ;
+            ->add('Projects', EntityType::class, [
+                'class' => Projects::class,
+                'choice_label' => 'name',
+                'multiple' => true,
+                'expanded' => true
+                ])
+
+            ->add('Skills', EntityType::class, [
+                    'class' => Skill::class,
+                    'choice_label' => 'name',
+                    'multiple' => true,
+                    'expanded' => true
+                    ]);
     }
 
     public function configureOptions(OptionsResolver $resolver)
