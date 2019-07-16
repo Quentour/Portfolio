@@ -49,13 +49,14 @@ class Projects
     private $link;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\User", mappedBy="Projects")
+     * @ORM\ManyToOne(targetEntity="App\Entity\User", inversedBy="projects")
      */
-    private $users;
+    private $user;
+
+
 
     public function __construct()
     {
-        $this->users = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -135,34 +136,17 @@ class Projects
         return $this;
     }
 
-    /**
-     * @return Collection|User[]
-     */
-    public function getUsers(): Collection
+    public function getUser(): ?User
     {
-        return $this->users;
+        return $this->user;
     }
 
-    public function addUser(User $user): self
+    public function setUser(?User $user): self
     {
-        if (!$this->users->contains($user)) {
-            $this->users[] = $user;
-            $user->setProjects($this);
-        }
+        $this->user = $user;
 
         return $this;
     }
 
-    public function removeUser(User $user): self
-    {
-        if ($this->users->contains($user)) {
-            $this->users->removeElement($user);
-            // set the owning side to null (unless already changed)
-            if ($user->getProjects() === $this) {
-                $user->setProjects(null);
-            }
-        }
 
-        return $this;
-    }
 }

@@ -8,11 +8,5 @@
 <p>phone: {{ user.phone}} </p>
 <p>mail: {{ user.mail }}</p>
 <p>address: {{ user.address }}</p>
-{% for skill in user.skills %}
-<p>{{ skill }}</p>
-{% endfor %}
-{% for project in user.projects %}
-<p>{{ project }}</p>
-{% endfor %}
 <a href="{{ path('admin_edit', {'id': user.id}) }}">edit</a>
 {% endblock %}

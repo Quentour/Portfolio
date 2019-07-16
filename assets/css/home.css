@@ -4,11 +4,19 @@
     color: white;
 }
 
-.info-card
+.info
 {
     background-color: #073433;
     color: white;
+    text-align: center;
 }
+
+hr
+{
+    border-color: white;
+    width: 80%;
+}
+
 
 .desc-card
 {
@@ -49,4 +57,11 @@
 body
 {
     background-color: #17BEBB;
+}
+
+.btn-projects
+{
+    font-size: 2em;
+    border-radius: 5%;
+    padding: 50px;
 }

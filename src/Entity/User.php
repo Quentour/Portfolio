@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
 
@@ -59,14 +61,21 @@ class User implements UserInterface
     private $picture;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Projects", inversedBy="users")
+     * @ORM\OneToMany(targetEntity="App\Entity\Projects", mappedBy="user")
      */
-    private $Projects;
+    private $projects;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Skill", inversedBy="users")
+     * @ORM\OneToMany(targetEntity="App\Entity\Skill", mappedBy="user")
      */
-    private $Skills;
+    private $skills;
+
+    public function __construct()
+    {
+        $this->projects = new ArrayCollection();
+        $this->skills = new ArrayCollection();
+    }
+
 
 
     public function getId(): ?int
@@ -202,27 +211,67 @@ class User implements UserInterface
         // $this->plainPassword = null;
     }
 
-    public function getProjects(): ?Projects
+    /**
+     * @return Collection|Projects[]
+     */
+    public function getProjects(): Collection
     {
-        return $this->Projects;
+        return $this->projects;
     }
 
-    public function setProjects(?Projects $Projects): self
+    public function addProject(Projects $project): self
     {
-        $this->Projects = $Projects;
+        if (!$this->projects->contains($project)) {
+            $this->projects[] = $project;
+            $project->setUser($this);
+        }
 
         return $this;
     }
 
-    public function getSkills(): ?Skill
+    public function removeProject(Projects $project): self
     {
-        return $this->Skills;
-    }
-
-    public function setSkills(?Skill $Skills): self
-    {
-        $this->Skills = $Skills;
+        if ($this->projects->contains($project)) {
+            $this->projects->removeElement($project);
+            // set the owning side to null (unless already changed)
+            if ($project->getUser() === $this) {
+                $project->setUser(null);
+            }
+        }
 
         return $this;
     }
+
+    /**
+     * @return Collection|Skill[]
+     */
+    public function getSkills(): Collection
+    {
+        return $this->skills;
+    }
+
+    public function addSkill(Skill $skill): self
+    {
+        if (!$this->skills->contains($skill)) {
+            $this->skills[] = $skill;
+            $skill->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeSkill(Skill $skill): self
+    {
+        if ($this->skills->contains($skill)) {
+            $this->skills->removeElement($skill);
+            // set the owning side to null (unless already changed)
+            if ($skill->getUser() === $this) {
+                $skill->setUser(null);
+            }
+        }
+
+        return $this;
+    }
+
+
 }
