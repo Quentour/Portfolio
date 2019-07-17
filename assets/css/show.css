@@ -18,13 +18,18 @@ body
 {
     position: fixed;
     border-radius: 100%;
+    top: 0px;
+    left: 20px;
+
 }
 
 .fixed-btn-2
 {
     position: fixed;
     border-radius: 100%;
-    top: 5em;
+    top: 0px;
+    left: 120px;
+
 }
 
 .title

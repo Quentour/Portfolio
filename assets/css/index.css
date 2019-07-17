@@ -1,6 +1,13 @@
 body
 {
-    background-color: #17BEBB;
+    background-color: #073433;
+}
+
+.cards-bg
+{
+    margin: 120px;
+    background-color:#17BEBB;
+    border-radius: 20%;
 }
 
 .card-project
@@ -8,34 +15,37 @@ body
     background-color: #073433;
     color: white;
     width: 50vw;
+    border-style: none;
 }
 
 .right
 {
-    left: 42vw;
+    left: 35vw;
     transition: 0.3s;
 }
 
 .left
 {
-    left: 5vw;
+    left: -5vw;
     transition: 0.3s;
 }
 
 .right:hover
 {
-    left: 35vw;
+    left: 30vw;
 }
 
 .left:hover
 {
-    left: 10vw;
+    left: -1vw;
 }
 
 .fixed-btn
 {
     position: fixed;
     border-radius: 100%;
+    top: 0px;
+    left: 20px;
 }
 
 .project-pic
@@ -58,23 +68,30 @@ body
 
     .right
     {
-        left: 15vw;
-        transition: 0.3s;
+        left: -25vw;
     }
 
-.left
+    .left
     {
-        left: 15vw;
-        transition: 0.3s;
+        left: -25vw;
     }
 
-.right:hover
+    .right:hover
     {
-        left: 15vw;
+        left: -25vw;
+        background-color: #17BEBB;
     }
 
-.left:hover
+    .left:hover
     {
-        left: 15vw;
+        left: -25vw;
+        background-color: #17BEBB
     }
+
+    .cards-bg
+{
+    margin: 120px;
+    background-color:#073433;
+    border-radius: 20%;
+}
 }
