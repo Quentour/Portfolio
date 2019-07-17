@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Projects{% endblock %}
+
+{% block stylesheets %}
+        {{ encore_entry_link_tags('show') }}
+{% endblock %}
+
+{% block body %}
+    <a href="{{ path('home') }}" class="btn btn-primary fixed-btn">home</a>
+    <a href="{{ path('home_projects') }}" class="btn btn-primary fixed-btn-2">Projects</a>
+
+    <img class="card-img-top parallax project-pic" src="{{ project.picture }}" alt="{{ project.name }}">
+    <div class="card card-project right mb-5">
+    <div class="card-body row">
+        <h1 class="col-12 title">{{ project.name }}</h1>
+        <div class="col-12 description">
+        <p>{{ project.description }}</p>
+        </div>
+        <div class="col-6">
+        <p class="col-12 project-date">started on: {{ project.startDate ? project.startDate|date('Y-m-d') : '' }}</p>
+        <p class="col-12 project-date">ended on: {{ project.endDate ? project.endDate|date('Y-m-d') : '' }}</p>
+        </div>
+        <div class="col-6  project-date">
+            <p>link to the project: {{ project.link }}</p>
+            <p></p>
+        </div>
+    </div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ encore_entry_script_tags('show') }}
+{% endblock %}

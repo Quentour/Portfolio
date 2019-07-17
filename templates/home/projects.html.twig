@@ -16,7 +16,8 @@
         <div class="card card-project right mb-5" style="width: 50rem;">
             <img class="card-img-top project-pic" src="{{ project.picture }}" alt="{{ project.name }}">
             <div class="card-body row">
-                <h3 class="col-4">{{ project.name }}</h3><p class="card-text col-4">{{ project.startDate ? project.startDate|date('Y-m-d') : '' }}</p>
+                <h3 class="col-4">{{ project.name }}</h3>
+                <p class="card-text col-4">{{ project.startDate ? project.startDate|date('Y-m-d') : '' }}</p>
                 <p class="col-4">{{ project.endDate ? project.endDate|date('Y-m-d') : '' }}</p>
                     <a class="btn btn-primary" href="{{ path('home_show', {'id': project.id}) }}">more details</a>
             </div>
