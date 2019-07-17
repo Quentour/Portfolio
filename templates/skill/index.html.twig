@@ -10,7 +10,7 @@
             <tr>
                 <th>Id</th>
                 <th>Name</th>
-                <th>Decription</th>
+                <th>Description</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -19,7 +19,7 @@
             <tr>
                 <td>{{ skill.id }}</td>
                 <td>{{ skill.name }}</td>
-                <td>{{ skill.decription }}</td>
+                <td>{{ skill.description }}</td>
                 <td>
                     <a href="{{ path('skill_show', {'id': skill.id}) }}">show</a>
                     <a href="{{ path('skill_edit', {'id': skill.id}) }}">edit</a>

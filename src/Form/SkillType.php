@@ -13,7 +13,7 @@ class SkillType extends AbstractType
     {
         $builder
             ->add('name')
-            ->add('decription')
+            ->add('description')
         ;
     }
 
