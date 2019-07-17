@@ -7,28 +7,29 @@ body
 {
     background-color: #073433;
     color: white;
+    width: 50vw;
 }
 
 .right
 {
-    left: 40rem;
+    left: 40vw;
     transition: 0.3s;
 }
 
 .left
 {
-    left: 7rem;
+    left: 7vw;
     transition: 0.3s;
 }
 
 .right:hover
 {
-    left: 37rem;
+    left: 37vw;
 }
 
 .left:hover
 {
-    left: 10rem;
+    left: 10vw;
 }
 
 .fixed-btn
@@ -39,6 +40,41 @@ body
 
 .project-pic
 {
-    width: 10rem;
-    height: 10rem;
+    width: 10vw;
+    height: 10vw;
+}
+
+@media only screen and (max-width: 600px) 
+{
+    .project-pic
+    {
+        width: 100%;
+        height: auto;
+    }
+    .card-project
+    {
+        width: 70vw;
+    }
+
+    .right
+    {
+        left: 15vw;
+        transition: 0.3s;
+    }
+
+.left
+    {
+        left: 15vw;
+        transition: 0.3s;
+    }
+
+.right:hover
+    {
+        left: 15vw;
+    }
+
+.left:hover
+    {
+        left: 15vw;
+    }
 }
