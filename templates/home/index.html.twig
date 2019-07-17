@@ -14,30 +14,30 @@
         <h2 class="page-title mb-0" style="text-align: right;">Web Developer</h2>
     </div>
 
-    <div class="row m-0 p-0">
-        <img class="col-6 m-0 p-0 profile-pic" src="{{ user.picture }}">
-        <p class="col-6 desc-card m-0 p-0">{{ user.description }}</p>
-        <p class="col-6 desc-card-hidden m-0 p-0">{{ user.description }}</p>
+    <div class="row m-0 p-0" style="position: relative;">
+        <img class="col-12 col-md-6 m-0 p-0 profile-pic" src="{{ user.picture }}">
+        <p class="col-12 col-md-6 desc-card m-0 p-0">{{ user.description }}</p>
+        <p class="col-12 col-md-6 desc-card-hidden m-0 p-0">{{ user.description }}</p>
     </div>
 
     <div class="row info mx-0 py-5">
-        <div class="col-4 mb-0 pb-0 px-0">
+        <div class="col-12 col-md-4 mb-0 pb-4 px-0">
             <h3>informations</h3>
             <hr>
             <p>Phone: {{ user.phone }}</p>
             <p>Mail: {{ user.mail }}</p>
             <p class="mb-0">Address: {{ user.address }}</p>
        </div>
-        <div class="col-4 mb-0 pb-0 px-0">
+        <div class="col-md-4 col-12 mb-0 pb-4 px-0">
             <h3>My skills</h3>
             <hr>
-            <div class="row">
+            <div class="row justify-content-around">
             {% for skill in user.skills %}
-                <p class="col-4">{{ skill.name }}</p>
+                <p class="col-3">{{ skill.name }}</p>
             {% endfor %}
             </div>
         </div>
-        <div class="col-4 m-0 p-0">
+        <div class="col-12 col-md-4 m-0 p-0">
         <a href="{{ path('home_projects') }}" class="btn btn-danger btn-projects mt-2"> My Projects</a>
         </div>
     </div>
