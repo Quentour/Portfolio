@@ -20,7 +20,7 @@ body
 
 .right
 {
-    left: 35vw;
+    left: 40vw;
     transition: 0.3s;
 }
 
@@ -32,7 +32,7 @@ body
 
 .right:hover
 {
-    left: 30vw;
+    left: 35vw;
 }
 
 .left:hover

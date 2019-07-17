@@ -26,7 +26,7 @@ class Skill
     /**
      * @ORM\Column(type="text")
      */
-    private $decription;
+    private $description;
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\User", inversedBy="skills")
@@ -55,14 +55,14 @@ class Skill
         return $this;
     }
 
-    public function getDecription(): ?string
+    public function getDescription(): ?string
     {
-        return $this->decription;
+        return $this->description;
     }
 
-    public function setDecription(string $decription): self
+    public function setDescription(string $description): self
     {
-        $this->decription = $decription;
+        $this->description = $description;
 
         return $this;
     }
