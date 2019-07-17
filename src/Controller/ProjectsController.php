@@ -9,6 +9,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Security\Core\Security;
+
 
 /**
  * @Route("/admin/projects")
@@ -18,21 +20,22 @@ class ProjectsController extends AbstractController
     /**
      * @Route("/", name="projects_index", methods={"GET"})
      */
-    public function index(ProjectsRepository $projectsRepository): Response
+    public function index(ProjectsRepository $projectsRepository, Security $security): Response
     {
         return $this->render('projects/index.html.twig', [
-            'projects' => $projectsRepository->findAll(),
+            'projects' => $projectsRepository->findBy(["user" => $security->getUser()->getId()]),
         ]);
     }
 
     /**
      * @Route("/new", name="projects_new", methods={"GET","POST"})
      */
-    public function new(Request $request): Response
+    public function new(Request $request, Security $security): Response
     {
         $project = new Projects();
         $form = $this->createForm(ProjectsType::class, $project);
         $form->handleRequest($request);
+        $project->setUser($security->getUser());
 
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager = $this->getDoctrine()->getManager();

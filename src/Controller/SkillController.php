@@ -20,10 +20,10 @@ class SkillController extends AbstractController
     /**
      * @Route("/", name="skill_index", methods={"GET"})
      */
-    public function index(SkillRepository $skillRepository): Response
+    public function index(SkillRepository $skillRepository, Security $security): Response
     {
         return $this->render('skill/index.html.twig', [
-            'skills' => $skillRepository->findAll(),
+            'skills' => $skillRepository->findBy(["user" => $security->getUser()->getId()]),
         ]);
     }
 

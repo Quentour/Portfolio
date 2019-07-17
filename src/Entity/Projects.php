@@ -24,7 +24,7 @@ class Projects
     private $name;
 
     /**
-     * @ORM\Column(type="string", length=2500, nullable=true)
+     * @ORM\Column(type="text", nullable=true)
      */
     private $description;
 
