@@ -1,0 +1,44 @@
+body
+{
+    background-color: #17BEBB;
+}
+
+.card-project
+{
+    background-color: #073433;
+    color: white;
+}
+
+.right
+{
+    left: 40rem;
+    transition: 0.3s;
+}
+
+.left
+{
+    left: 7rem;
+    transition: 0.3s;
+}
+
+.right:hover
+{
+    left: 37rem;
+}
+
+.left:hover
+{
+    left: 10rem;
+}
+
+.fixed-btn
+{
+    position: fixed;
+    border-radius: 100%;
+}
+
+.project-pic
+{
+    width: 10rem;
+    height: 10rem;
+}

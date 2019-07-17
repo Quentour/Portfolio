@@ -2,44 +2,41 @@
 
 {% block title %}Projects index{% endblock %}
 
+{% block stylesheets %}
+        {{ encore_entry_link_tags('index') }}
+{% endblock %}
+
 {% block body %}
-    <h1>Projects index</h1>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>Description</th>
-                <th>StartDate</th>
-                <th>EndDate</th>
-                <th>Picture</th>
-                <th>Link</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
+    <a href="{{ path('home') }}" class="btn btn-primary fixed-btn">home</a>
+
         {% for project in projects %}
-            <tr>
-                <td>{{ project.id }}</td>
-                <td>{{ project.name }}</td>
-                <td>{{ project.description }}</td>
-                <td>{{ project.startDate ? project.startDate|date('Y-m-d H:i:s') : '' }}</td>
-                <td>{{ project.endDate ? project.endDate|date('Y-m-d H:i:s') : '' }}</td>
-                <td>{{ project.picture }}</td>
-                <td>{{ project.link }}</td>
-                <td>
-                    <a href="{{ path('projects_show', {'id': project.id}) }}">show</a>
-                    <a href="{{ path('projects_edit', {'id': project.id}) }}">edit</a>
-                </td>
-            </tr>
+        
+        {% if loop.index%2 == 0 %}
+        <div class="card card-project right mb-5" style="width: 50rem;">
+            <img class="card-img-top project-pic" src="{{ project.picture }}" alt="{{ project.name }}">
+            <div class="card-body row">
+                <h3 class="col-4">{{ project.name }}</h3><p class="card-text col-4">{{ project.startDate ? project.startDate|date('Y-m-d') : '' }}</p>
+                <p class="col-4">{{ project.endDate ? project.endDate|date('Y-m-d') : '' }}</p>
+                    <a class="btn btn-primary" href="{{ path('home_show', {'id': project.id}) }}">more details</a>
+            </div>
+        </div>
         {% else %}
-            <tr>
-                <td colspan="8">no records found</td>
-            </tr>
+        <div class="card card-project left mb-5" style="width: 50rem;">
+            <img class="card-img-top project-pic" src="{{ project.picture }}" alt="{{ project.name }}">
+            <div class="card-body row">
+                <h3 class="col-4">{{ project.name }}</h3><p class="card-text col-4">{{ project.startDate ? project.startDate|date('Y-m-d') : '' }}</p>
+                <p class="col-4">{{ project.endDate ? project.endDate|date('Y-m-d') : '' }}</p>
+                    <a class="btn btn-primary" href="{{ path('home_show', {'id': project.id}) }}">more details</a>
+            </div>
+        </div>
+        {% endif %}
+        {% else %}
+                <p>no records found</p>
         {% endfor %}
-        </tbody>
-    </table>
 
-    <a href="{{ path('projects_new') }}">Create new</a>
+{% endblock %}
+
+{% block javascripts %}
+    {{ encore_entry_script_tags('index') }}
 {% endblock %}
