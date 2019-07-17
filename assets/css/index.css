@@ -6,8 +6,12 @@ body
 .cards-bg
 {
     margin: 120px;
-    background-color:#17BEBB;
+    background-image: url("/upload/matrix.png");
     border-radius: 20%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 .card-project
@@ -22,12 +26,15 @@ body
 {
     left: 40vw;
     transition: 0.3s;
+    border-radius: 40% 0% 0% 40%;
 }
 
 .left
 {
     left: -5vw;
     transition: 0.3s;
+    border-radius: 0% 40% 40% 0%;
+
 }
 
 .right:hover
@@ -69,11 +76,13 @@ body
     .right
     {
         left: -25vw;
+        border-radius: 0%;
     }
 
     .left
     {
         left: -25vw;
+        border-radius: 0%;
     }
 
     .right:hover
@@ -93,5 +102,7 @@ body
     margin: 120px;
     background-color:#073433;
     border-radius: 20%;
+    background-image: none;
+
 }
 }
