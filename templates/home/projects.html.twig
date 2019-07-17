@@ -14,22 +14,22 @@
         
         {% if loop.index%2 == 0 %}
         <div class="card card-project right mb-5">
-            <img class="card-img-top project-pic" src="{{ project.picture }}" alt="{{ project.name }}">
             <div class="card-body row">
-                <h3 class="col-md-4 col-12">{{ project.name }}</h3>
-                <p class="card-text col-md-4 col-12">{{ project.startDate ? project.startDate|date('Y-m-d') : '' }}</p>
-                <p class="col-md-4 col-12">{{ project.endDate ? project.endDate|date('Y-m-d') : '' }}</p>
-                    <a class="btn btn-primary" href="{{ path('home_show', {'id': project.id}) }}">more details</a>
+            <img class="card-img-top col-md-3 col-12 project-pic" src="{{ project.picture }}" alt="{{ project.name }}">
+                <h3 class="col-md-3 col-12">{{ project.name }}</h3>
+                <p class="card-text col-md-3 col-12">started on: {{ project.startDate ? project.startDate|date('Y-m-d') : '' }}</p>
+                <p class="col-md-3 col-12">ended on: {{ project.endDate ? project.endDate|date('Y-m-d') : '' }}</p>
+                    <a class="btn btn-primary col-4 mx-auto" href="{{ path('home_show', {'id': project.id}) }}">more details</a>
             </div>
         </div>
         {% else %}
         <div class="card card-project left mb-5">
-            <img class="card-img-top project-pic" src="{{ project.picture }}" alt="{{ project.name }}">
             <div class="card-body row">
-                <h3 class="col-md-4 col-12">{{ project.name }}</h3>
-                <p class="card-text col-md-4 col-12">{{ project.startDate ? project.startDate|date('Y-m-d') : '' }}</p>
-                <p class="col-md-4 col-12">{{ project.endDate ? project.endDate|date('Y-m-d') : '' }}</p>
-                    <a class="btn btn-primary" href="{{ path('home_show', {'id': project.id}) }}">more details</a>
+            <img class="card-img-top col-md-3 col-12 project-pic" src="{{ project.picture }}" alt="{{ project.name }}">
+                <h3 class="col-md-3 col-12">{{ project.name }}</h3>
+                <p class="card-text col-md-3 col-12">started on: {{ project.startDate ? project.startDate|date('Y-m-d') : '' }}</p>
+                <p class="col-md-3 col-12">ended on: {{ project.endDate ? project.endDate|date('Y-m-d') : '' }}</p>
+                    <a class="btn btn-primary col-4 mx-auto" href="{{ path('home_show', {'id': project.id}) }}">more details</a>
             </div>
         </div>
         {% endif %}

@@ -12,19 +12,19 @@ body
 
 .right
 {
-    left: 40vw;
+    left: 42vw;
     transition: 0.3s;
 }
 
 .left
 {
-    left: 7vw;
+    left: 5vw;
     transition: 0.3s;
 }
 
 .right:hover
 {
-    left: 37vw;
+    left: 35vw;
 }
 
 .left:hover
