@@ -12,19 +12,10 @@
 
     <img class="card-img-top parallax project-pic" src="{{ project.picture }}" alt="{{ project.name }}">
     <div class="card card-project">
-    <div class="card-body row">
+    <div class="card-body mr-0 row justify-content-center">
         <h1 class="col-12 title">{{ project.name }}</h1>
-        <div class="col-12 description">
+        <div class="col-12 col-md-6 description">
         <p>{{ project.description }}</p>
-        </div>
-        <div class="col-6">
-        <p class="col-12 project-date">started on: {{ project.startDate ? project.startDate|date('Y-m-d') : '' }}</p>
-        <p class="col-12 project-date">ended on: {{ project.endDate ? project.endDate|date('Y-m-d') : '' }}</p>
-        </div>
-        <div class="col-6  project-date">
-            <a href="{{ project.link }}">link to the project</a>
-            <p></p>
-        </div>
     </div>
     </div>
 {% endblock %}

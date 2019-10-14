@@ -26,14 +26,14 @@ body
 {
     left: 40vw;
     transition: 0.3s;
-    border-radius: 40% 0% 0% 40%;
+
 }
 
 .left
 {
     left: -5vw;
     transition: 0.3s;
-    border-radius: 0% 40% 40% 0%;
+
 
 }
 
@@ -50,7 +50,7 @@ body
 .fixed-btn
 {
     position: fixed;
-    border-radius: 100%;
+
     top: 0px;
     left: 20px;
 }

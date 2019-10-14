@@ -28,96 +28,45 @@ class UserFixtures extends Fixture
         $user->setUsername("nalodd")
             ->setRoles(["ROLE_ADMIN"])
             ->setPassword($this->passwordEncoder->encodePassword($user, 'pswd'))
-            ->setDescription("Passionné d’informatique depuis le plus jeune âge, je me suis très vite intéressé à la programmation ce qui m’a poussé a faire une formation dans le développement web. Je suis actuellement en recherche de stage pour confirmer mes compétence.")
-            ->setPicture('/upload/logo.png')
+            ->setDescription("Passionné d’informatique depuis le plus jeune âge, je me suis très vite intéressé à la programmation. Suite a une formation au métier de développeur web et
+              mobile a la Wild Code School je souhaite désormais trouver un emploi dans ce domaine.")
+            ->setPicture('/upload/cv.jpg')
             ->setPhone("0928408409")
-            ->setMail("jean@nemar.com")
-            ->setAddress("shfmkhdsùf");
+            ->setMail("quentin.latour.pro@gmail.com")
+            ->setAddress("155 Avenue Roger Salengro");
         $manager->persist($user);
 
         $project = new Projects();
         $project->setUser($user)
-               ->setName("project1")
-               ->setDescription(" Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus iaculis magna vel purus lacinia ultricies. In et tristique sem. Cras eu leo pellentesque, faucibus purus et, vehicula quam. Suspendisse lacinia dictum tristique. Vestibulum volutpat ex mi, at aliquet ante mollis non. In lacinia urna arcu, non vulputate neque hendrerit eget. Praesent aliquam urna eget arcu egestas molestie. Nullam dictum quis ligula consequat facilisis. Nullam imperdiet hendrerit turpis, id molestie augue sagittis ut. Duis pharetra quam et diam fringilla sodales. Duis efficitur tristique tellus vitae aliquet. Vestibulum imperdiet est quis enim congue, vel congue arcu lacinia. Sed tellus sapien, cursus nec porta sit amet, imperdiet at sapien. Fusce mi turpis, mollis vel lacus id, porta pretium velit.
-
-               Cras facilisis lacus a nunc dignissim suscipit. Donec nec porttitor leo. Phasellus ut semper sapien, at sagittis lectus. Nam semper quam non augue lacinia facilisis. Donec condimentum ipsum et neque hendrerit, in sodales lacus laoreet. Suspendisse potenti. Morbi consectetur eros ipsum, et mattis sem commodo vitae. Suspendisse nec odio maximus, porttitor mauris non, hendrerit tortor. Donec ultricies ligula malesuada vulputate vehicula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. In tincidunt mauris vitae porttitor ornare. Vestibulum laoreet nulla nisl, ac aliquet purus commodo ut. Sed ipsum sapien, commodo et velit egestas, mollis hendrerit urna. ")
-               ->setStartDate(new \DateTime('06/04/2014'))
-               ->setEndDate(new \DateTime('06/04/2019'))
-               ->setPicture('/upload/logo.png')
+               ->setName("Pawn Shop")
+               ->setDescription(" Creation d'un site de e-comerce statique, projet d'une duree de 2 semaine realiser par groupe de 5 au tout debut de la formation en utilisant seulement du html et du css pour nous familiariser a ces technologie")
+               ->setStartDate(null)
+               ->setEndDate(null)
+               ->setPicture('/upload/PawnShop.png')
                ->setLink('/upload/logo.png');
         $manager->persist($project);
 
         $project = new Projects();
         $project->setUser($user)
-               ->setName("project2")
-               ->setDescription(" Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus iaculis magna vel purus lacinia ultricies. In et tristique sem. Cras eu leo pellentesque, faucibus purus et, vehicula quam. Suspendisse lacinia dictum tristique. Vestibulum volutpat ex mi, at aliquet ante mollis non. In lacinia urna arcu, non vulputate neque hendrerit eget. Praesent aliquam urna eget arcu egestas molestie. Nullam dictum quis ligula consequat facilisis. Nullam imperdiet hendrerit turpis, id molestie augue sagittis ut. Duis pharetra quam et diam fringilla sodales. Duis efficitur tristique tellus vitae aliquet. Vestibulum imperdiet est quis enim congue, vel congue arcu lacinia. Sed tellus sapien, cursus nec porta sit amet, imperdiet at sapien. Fusce mi turpis, mollis vel lacus id, porta pretium velit.
-
-               Cras facilisis lacus a nunc dignissim suscipit. Donec nec porttitor leo. Phasellus ut semper sapien, at sagittis lectus. Nam semper quam non augue lacinia facilisis. Donec condimentum ipsum et neque hendrerit, in sodales lacus laoreet. Suspendisse potenti. Morbi consectetur eros ipsum, et mattis sem commodo vitae. Suspendisse nec odio maximus, porttitor mauris non, hendrerit tortor. Donec ultricies ligula malesuada vulputate vehicula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. In tincidunt mauris vitae porttitor ornare. Vestibulum laoreet nulla nisl, ac aliquet purus commodo ut. Sed ipsum sapien, commodo et velit egestas, mollis hendrerit urna. ")
+               ->setName("airBnB")
+               ->setDescription(" Projet qui nous a inicier au modele MVC, nous avons travailler par groupe de 5 personnes sur une duree de 1 mois. Le but etait de programmer un site de chambre d'hote. Nous avons beaucoup travailler sur la partie d'administration qui presente les profits fait sur les chambres sous forme de graphique ")
                ->setStartDate(new \DateTime('06/04/2014'))
                ->setEndDate(new \DateTime('06/04/2019'))
-               ->setPicture('/upload/logo.png')
+               ->setPicture('/upload/airBnB.png')
                ->setLink('/upload/logo.png');
         $manager->persist($project);
 
         $project = new Projects();
         $project->setUser($user)
-               ->setName("project3")
-               ->setDescription(" Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus iaculis magna vel purus lacinia ultricies. In et tristique sem. Cras eu leo pellentesque, faucibus purus et, vehicula quam. Suspendisse lacinia dictum tristique. Vestibulum volutpat ex mi, at aliquet ante mollis non. In lacinia urna arcu, non vulputate neque hendrerit eget. Praesent aliquam urna eget arcu egestas molestie. Nullam dictum quis ligula consequat facilisis. Nullam imperdiet hendrerit turpis, id molestie augue sagittis ut. Duis pharetra quam et diam fringilla sodales. Duis efficitur tristique tellus vitae aliquet. Vestibulum imperdiet est quis enim congue, vel congue arcu lacinia. Sed tellus sapien, cursus nec porta sit amet, imperdiet at sapien. Fusce mi turpis, mollis vel lacus id, porta pretium velit.
-
-               Cras facilisis lacus a nunc dignissim suscipit. Donec nec porttitor leo. Phasellus ut semper sapien, at sagittis lectus. Nam semper quam non augue lacinia facilisis. Donec condimentum ipsum et neque hendrerit, in sodales lacus laoreet. Suspendisse potenti. Morbi consectetur eros ipsum, et mattis sem commodo vitae. Suspendisse nec odio maximus, porttitor mauris non, hendrerit tortor. Donec ultricies ligula malesuada vulputate vehicula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. In tincidunt mauris vitae porttitor ornare. Vestibulum laoreet nulla nisl, ac aliquet purus commodo ut. Sed ipsum sapien, commodo et velit egestas, mollis hendrerit urna. ")
+               ->setName("project client")
+               ->setDescription(" Developpement d'un site Web pour le Festival International de Theatre Sens Interdits. La plus grosse demande du client etait une partie administrative simple a utiliser c'est donc la que nous avons focaliser nos efforts. ")
                ->setStartDate(new \DateTime('06/04/2014'))
                ->setEndDate(new \DateTime('06/04/2019'))
-               ->setPicture('/upload/logo.png')
+               ->setPicture('/upload/sensInterdit.png')
                ->setLink('/upload/logo.png');
         $manager->persist($project);
 
-        $project = new Projects();
-        $project->setUser($user)
-               ->setName("project4")
-               ->setDescription(" Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus iaculis magna vel purus lacinia ultricies. In et tristique sem. Cras eu leo pellentesque, faucibus purus et, vehicula quam. Suspendisse lacinia dictum tristique. Vestibulum volutpat ex mi, at aliquet ante mollis non. In lacinia urna arcu, non vulputate neque hendrerit eget. Praesent aliquam urna eget arcu egestas molestie. Nullam dictum quis ligula consequat facilisis. Nullam imperdiet hendrerit turpis, id molestie augue sagittis ut. Duis pharetra quam et diam fringilla sodales. Duis efficitur tristique tellus vitae aliquet. Vestibulum imperdiet est quis enim congue, vel congue arcu lacinia. Sed tellus sapien, cursus nec porta sit amet, imperdiet at sapien. Fusce mi turpis, mollis vel lacus id, porta pretium velit.
 
-               Cras facilisis lacus a nunc dignissim suscipit. Donec nec porttitor leo. Phasellus ut semper sapien, at sagittis lectus. Nam semper quam non augue lacinia facilisis. Donec condimentum ipsum et neque hendrerit, in sodales lacus laoreet. Suspendisse potenti. Morbi consectetur eros ipsum, et mattis sem commodo vitae. Suspendisse nec odio maximus, porttitor mauris non, hendrerit tortor. Donec ultricies ligula malesuada vulputate vehicula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. In tincidunt mauris vitae porttitor ornare. Vestibulum laoreet nulla nisl, ac aliquet purus commodo ut. Sed ipsum sapien, commodo et velit egestas, mollis hendrerit urna. ")
-               ->setStartDate(new \DateTime('06/04/2014'))
-               ->setEndDate(new \DateTime('06/04/2019'))
-               ->setPicture('/upload/logo.png')
-               ->setLink('/upload/logo.png');
-        $manager->persist($project);
-
-        $project = new Projects();
-        $project->setUser($user)
-               ->setName("project5")
-               ->setDescription(" Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus iaculis magna vel purus lacinia ultricies. In et tristique sem. Cras eu leo pellentesque, faucibus purus et, vehicula quam. Suspendisse lacinia dictum tristique. Vestibulum volutpat ex mi, at aliquet ante mollis non. In lacinia urna arcu, non vulputate neque hendrerit eget. Praesent aliquam urna eget arcu egestas molestie. Nullam dictum quis ligula consequat facilisis. Nullam imperdiet hendrerit turpis, id molestie augue sagittis ut. Duis pharetra quam et diam fringilla sodales. Duis efficitur tristique tellus vitae aliquet. Vestibulum imperdiet est quis enim congue, vel congue arcu lacinia. Sed tellus sapien, cursus nec porta sit amet, imperdiet at sapien. Fusce mi turpis, mollis vel lacus id, porta pretium velit.
-
-               Cras facilisis lacus a nunc dignissim suscipit. Donec nec porttitor leo. Phasellus ut semper sapien, at sagittis lectus. Nam semper quam non augue lacinia facilisis. Donec condimentum ipsum et neque hendrerit, in sodales lacus laoreet. Suspendisse potenti. Morbi consectetur eros ipsum, et mattis sem commodo vitae. Suspendisse nec odio maximus, porttitor mauris non, hendrerit tortor. Donec ultricies ligula malesuada vulputate vehicula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. In tincidunt mauris vitae porttitor ornare. Vestibulum laoreet nulla nisl, ac aliquet purus commodo ut. Sed ipsum sapien, commodo et velit egestas, mollis hendrerit urna. ")
-               ->setStartDate(new \DateTime('06/04/2014'))
-               ->setEndDate(new \DateTime('06/04/2019'))
-               ->setPicture('/upload/logo.png')
-               ->setLink('/upload/logo.png');
-        $manager->persist($project);
-
-        $project = new Projects();
-        $project->setUser($user)
-               ->setName("project6")
-               ->setDescription(" Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus iaculis magna vel purus lacinia ultricies. In et tristique sem. Cras eu leo pellentesque, faucibus purus et, vehicula quam. Suspendisse lacinia dictum tristique. Vestibulum volutpat ex mi, at aliquet ante mollis non. In lacinia urna arcu, non vulputate neque hendrerit eget. Praesent aliquam urna eget arcu egestas molestie. Nullam dictum quis ligula consequat facilisis. Nullam imperdiet hendrerit turpis, id molestie augue sagittis ut. Duis pharetra quam et diam fringilla sodales. Duis efficitur tristique tellus vitae aliquet. Vestibulum imperdiet est quis enim congue, vel congue arcu lacinia. Sed tellus sapien, cursus nec porta sit amet, imperdiet at sapien. Fusce mi turpis, mollis vel lacus id, porta pretium velit.
-
-               Cras facilisis lacus a nunc dignissim suscipit. Donec nec porttitor leo. Phasellus ut semper sapien, at sagittis lectus. Nam semper quam non augue lacinia facilisis. Donec condimentum ipsum et neque hendrerit, in sodales lacus laoreet. Suspendisse potenti. Morbi consectetur eros ipsum, et mattis sem commodo vitae. Suspendisse nec odio maximus, porttitor mauris non, hendrerit tortor. Donec ultricies ligula malesuada vulputate vehicula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. In tincidunt mauris vitae porttitor ornare. Vestibulum laoreet nulla nisl, ac aliquet purus commodo ut. Sed ipsum sapien, commodo et velit egestas, mollis hendrerit urna. ")
-               ->setStartDate(new \DateTime('06/04/2014'))
-               ->setEndDate(new \DateTime('06/04/2019'))
-               ->setPicture('/upload/logo.png')
-               ->setLink('/upload/logo.png');
-        $manager->persist($project);
-
-        $project = new Projects();
-        $project->setUser($user)
-               ->setName("project7")
-               ->setDescription(" Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus iaculis magna vel purus lacinia ultricies. In et tristique sem. Cras eu leo pellentesque, faucibus purus et, vehicula quam. Suspendisse lacinia dictum tristique. Vestibulum volutpat ex mi, at aliquet ante mollis non. In lacinia urna arcu, non vulputate neque hendrerit eget. Praesent aliquam urna eget arcu egestas molestie. Nullam dictum quis ligula consequat facilisis. Nullam imperdiet hendrerit turpis, id molestie augue sagittis ut. Duis pharetra quam et diam fringilla sodales. Duis efficitur tristique tellus vitae aliquet. Vestibulum imperdiet est quis enim congue, vel congue arcu lacinia. Sed tellus sapien, cursus nec porta sit amet, imperdiet at sapien. Fusce mi turpis, mollis vel lacus id, porta pretium velit.
-
-               Cras facilisis lacus a nunc dignissim suscipit. Donec nec porttitor leo. Phasellus ut semper sapien, at sagittis lectus. Nam semper quam non augue lacinia facilisis. Donec condimentum ipsum et neque hendrerit, in sodales lacus laoreet. Suspendisse potenti. Morbi consectetur eros ipsum, et mattis sem commodo vitae. Suspendisse nec odio maximus, porttitor mauris non, hendrerit tortor. Donec ultricies ligula malesuada vulputate vehicula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. In tincidunt mauris vitae porttitor ornare. Vestibulum laoreet nulla nisl, ac aliquet purus commodo ut. Sed ipsum sapien, commodo et velit egestas, mollis hendrerit urna. ")
-               ->setStartDate(new \DateTime('06/04/2014'))
-               ->setEndDate(new \DateTime('06/04/2019'))
-               ->setPicture('/upload/logo.png')
-               ->setLink('/upload/logo.png');
-        $manager->persist($project);
 
        $skill = new Skill();
        $skill->setName("PHP");
